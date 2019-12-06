@@ -41,7 +41,25 @@ __device__ vec3 reflect(const vec3& v, const vec3& n) {
 
 class material {
 public:
-	__device__ virtual bool scatter(const ray& r_in, const hit_record& rec, vec3& attenuation, ray& scattered, curandState *local_rand_state) const = 0;
+	__device__ virtual bool scatter(const ray& r_in, const hit_record& rec, vec3& attenuation, ray& scattered, curandState *local_rand_state) const {
+		return 0;
+	}
+	__device__ virtual vec3 emitted(float u, float v, const vec3& p) const {
+		return vec3(0, 0, 0);
+	}
+};
+
+class diffuse_light_val : public material {
+public:
+	__device__ diffuse_light_val(texture_val *a) : emit(a) {}
+	__device__ virtual bool scatter(const ray& r_in, const hit_record& rec,
+		vec3& attenuation, ray& scattered) const {
+		return false;
+	}
+	__device__ virtual vec3 emitted(float u, float v, const vec3& p) const {
+		return emit->value(u, v, p);
+	}
+	texture_val *emit;
 };
 
 class lambertian : public material {
