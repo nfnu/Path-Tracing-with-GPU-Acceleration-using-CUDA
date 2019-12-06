@@ -9,7 +9,7 @@ My hardware specs are -
 2. Graphics coprocessor - NVIDIA GTX 1050
 3. 16GB RAM
 
-The whole code has been run on visual studio 2017.
+There are 5 scenes in the code and they are rendered on visual studio 2017.
 
 This branch contains the Cornell box output with GPU acceleration.
 
@@ -17,5 +17,4 @@ My Results -
 Original code took 80 mins to render the cornell box (100 samples/pixel)
 This code takes 5 mins to render the cornell box (100 samples/pixel)
 
-There are 5 scenes in the code. 
 
