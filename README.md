@@ -12,7 +12,7 @@ My hardware specs are -
 2. Graphics coprocessor - NVIDIA GTX 1050
 3. 16GB RAM
 
-Following Peter Shirley's books on 'Raytracing in one weekend' (https://raytracing.github.io), the time taken on my system to build the 500 random samples was 50 mins, which reduced drastically to 3.9 mins using CUDA.
+Following Peter Shirley's books on 'Raytracing in one weekend' (https://raytracing.github.io), the time taken on my system to build the 500 random samples was 50 mins, which reduced drastically to 3.9 mins using CUDA. On an average, the GPU acceleration gave a 15x speed increase to the existing path tracer.
 
 The whole code has been run on visual studio 2017.
 
